@@ -1,4 +1,4 @@
-package org.winter;
+package org.winter.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -12,7 +12,6 @@ import java.lang.annotation.Target;
  **/
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-public @interface Component {
-
-    String value() default "";
+public @interface ComponentScan {
+    String value() default "" ;
 }

@@ -1,9 +1,11 @@
 package org.winter;
 
-import javax.crypto.spec.IvParameterSpec;
+import org.winter.annotation.Autowired;
+import org.winter.annotation.Component;
+import org.winter.annotation.ComponentScan;
+import org.winter.annotation.Scope;
+
 import java.io.File;
-import java.lang.annotation.Annotation;
-import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;

@@ -1,6 +1,6 @@
 package org.hoxton;
 
-import org.winter.ComponentScan;
+import org.winter.annotation.ComponentScan;
 
 /**
  * Winter的配置文件

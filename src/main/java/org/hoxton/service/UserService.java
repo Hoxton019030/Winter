@@ -1,8 +1,7 @@
 package org.hoxton.service;
 
-import org.winter.Autowired;
-import org.winter.Component;
-import org.winter.Scope;
+import org.winter.annotation.Autowired;
+import org.winter.annotation.Component;
 
 /**
  * @author Hoxton

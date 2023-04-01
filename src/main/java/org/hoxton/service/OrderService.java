@@ -1,6 +1,6 @@
 package org.hoxton.service;
 
-import org.winter.Component;
+import org.winter.annotation.Component;
 
 /**
  * @author Hoxton
