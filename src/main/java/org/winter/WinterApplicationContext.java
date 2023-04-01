@@ -4,6 +4,7 @@ import javax.crypto.spec.IvParameterSpec;
 import java.io.File;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.util.concurrent.ConcurrentHashMap;
@@ -51,6 +52,16 @@ public class WinterApplicationContext {
         Class clazz = beanDefinition.getClazz();
         try {
             Object instance = clazz.getDeclaredConstructor().newInstance();
+            //依賴注入 IoC
+            for (Field declaredField : clazz.getDeclaredFields()) {
+                 if(declaredField.isAnnotationPresent(Autowired.class)){
+                     // ByName　進行AutoWired
+                     Object bean = getBean(declaredField.getName());
+                     declaredField.setAccessible(true);
+                     declaredField.set(instance, bean);
+                 }
+            }
+
             return instance;
         } catch (InstantiationException e) {
             throw new RuntimeException(e);
