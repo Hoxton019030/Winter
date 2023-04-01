@@ -39,9 +39,6 @@ public class WinterApplicationContext {
             //如果bean scope是單例，則放進單例池中
             if(beanDefinition.getScope().equals(SINGLETON)){
                 Object bean = creatBean(beanDefinition);
-                System.out.println("beanDefinition.getScope() = " + beanDefinition.getScope());
-                System.out.println("beanDefinition.getClazz() = " + beanDefinition.getClazz());
-                System.out.println("beanName = " + beanName);
                 singletonPool.put(beanName, bean);
             }
 
